@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey form</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+    <div class="flexing">
+
+        <div class="left">
+            <img  class="pic1" src="doct1.jpg" alt="">
+            <!--<img class="pic1"src="doct3.jpg" alt="">-->
+        </div>
+    
+            <div class = "center">
+        
+                <!--main form-->
+            <h1 id="title"> <t><t></t></t> Survey  </h1>
+            <form id="survey-form" action = "/form/" method = "POST" enctype = "application/json" >
+                <div class="form-control">
+                    <label for="age" id="label-age">
+                    <strong>Age :</strong> 
+                    </label>
+                    <input type="number" id="age" required placeholder="Enter your age"  />
+                </div>
+        
+                <!--toggle of sex-->
+                <div class="form-control">
+                    <label for="role" id="label-role">
+                    <strong>SEX :</strong>
+                    </label>
+                    <select name="role" id="role">
+                        <option value="student">0 - Female</option>
+                        <option value="intern">1 - Male</option>
+                    </select>
+                </div>
+        
+                <!--chest pain level-->
+                <div class="form-control chest-pain">
+                    <label><strong>Chest pain level?</strong></label>
+                    <br>
+                    <label for="inp-1">
+                        <input type="checkbox" name="inp">0</input>
+                    </label>
+                    <br>
+                    <label for="inp-1">
+                        <input type="checkbox" name="inp">1</input>
+                    </label>
+                    <br>
+                    <label for="inp-1">
+                        <input type="checkbox" name="inp">2</input>
+                    </label>
+                    <br>
+                    <label for="inp-1">
+                        <input type="checkbox" name="inp">3</input>
+                    </label>
+                    <br>
+                    <label for="inp-1">
+                        <input type="checkbox" name="inp">4</input>
+                    </label>
+                    <br>
+                </div>
+        
+                <!--toggle of Fasting blood sugar-->
+                <div class="form-control">
+                    <label for="role" id="label-role">
+                    <strong>Fasting Blood Sugar :</strong>
+                    </label>
+                    <select name="role" id="role">
+                        <option value="student">0</option>
+                        <option value="intern">1 </option>
+                    </select>
+        
+                    <label for="role" id="label-role">
+                    <strong>Resting ECG :</strong>
+                    </label>
+                    <select name="role" id="role">
+                        <option value="student">0</option>
+                        <option value="intern">1 </option>
+                    </select>
+                </div>
+                <!--Restin BP (Slider)-->
+                <div class="slidecontainer">
+                    <p><strong>BP:</strong> 
+                        <t></t>
+                        <t></t>
+                        Value: <span id="demo"></span>
+                    </p>
+                    <input type="range" required min="100" max="180" value="150" class="slider" id="myRange">
+                </div>
+        
+                <!--Cholestrol (Slider)-->
+                <div class="slidecontainer-chol">
+                    <p><strong>Cholestrol:</strong>
+                        <t></t>
+                        
+                        Value: <span id="chol"></span>
+                    </p>
+                    <input type="range" required min="0" max="500" value="200" class="chlo-slider" id="Range">
+                </div>
+            
+                <!--Max Heart Rate-->
+                <div>
+                    <p><strong>Maximum Heart Rate : </strong><input type="number" required class="HeartRate">  </p>
+                    
+                </div>
+        
+                <!--toggle of exercise-->
+                <div class="form-control">
+        
+                    <label for="role" id="label-role">
+                        <strong>Exercise :</strong>
+                    </label>
+                    <select name="role" id="role">
+                        <option value="student">0</option>
+                        <option value="intern">1 </option>
+                    </select>
+                </div>
+        
+                <!--toggle of ST slope-->
+                <div class="form-control">
+                    <label for="role" id="label-role">
+                        <strong>ST Slope:</strong>
+                    </label>
+                    <select name="role" id="role">
+                        <option value="student">1</option>
+                        <option value="intern">2 </option>
+                        <option value="intern">3 </option>
+                    </select>
+        
+        
+        
+                    <label for="role" id="label-role">
+                    <strong>Target:</strong>
+                    </label>
+                    <select name="role" id="role">
+                        <option value="student">0</option>
+                        <option value="intern">1 </option>
+                    </select>
+                </div>
+        <!--oldpeak-->
+                <div>
+                    <p><strong>oldpeak : </strong><input type="number" class="oldpeak">  </p>
+                    
+                </div>
+        
+                <!--reset button-->
+                <div class="button submit_reset">
+                    <button type="reset" value="reset" id="reset">
+                        Reset
+                    </button>
+                    <!--submit button-->
+                    <button type="submit" value="submit" id="submit">
+                        Submit
+                    </button>
+                </div>
+            </form>
+    
+        </div>
+    
+        <div class="right">
+            <img  class="pic2" src="doct2.jpg" alt="">
+            <!--<img  class="pic2" src="doct4.jpg" alt="">-->
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+        //BP script
+        var BPslider = document.getElementById("myRange");
+        var BPoutput = document.getElementById("demo");
+        BPoutput.innerHTML = BPslider.value;
+
+        BPslider.oninput = function () {
+            BPoutput.innerHTML = this.value;
+        }
+        //cholestrol Script
+        var CHslider = document.getElementById("Range");
+        var CHoutput = document.getElementById("chol");
+        CHoutput.innerHTML = CHslider.value;
+
+        CHslider.oninput = function () {
+            CHoutput.innerHTML = this.value;
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+body {
+   
+    background-color: #ffff;
+    font-family: sans-serif;
+}
+
+.pic1 {
+    height: 300px;
+    width: 300px;
+}
+
+.pic2 {
+    height: 300px;
+    width: 300px;
+}
+
+.flexing {
+    display:flex ;
+}
+
+
+.left {
+    margin-left: 5%;
+}
+
+.center {
+    margin-left: 5%;
+}
+
+.right {
+    margin-left: 5%;
+}
